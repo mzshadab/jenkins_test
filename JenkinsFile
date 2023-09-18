@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Insert your build commands here
+                // Example: mvn clean package for a Maven project
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Insert your test commands here
+                // Example: mvn test for a Maven project
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build and tests succeeded. Deploying...'
+            // Insert your deployment steps here
+            // Example: Deploy to a staging environment
+        }
+
+        failure {
+            echo 'Build or tests failed. Notify the team...'
+            // Insert notifications or cleanup steps here
+        }
+    }
+}
+
