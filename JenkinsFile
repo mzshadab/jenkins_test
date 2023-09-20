@@ -27,7 +27,7 @@ pipeline {
         }
 
         failure {
-            echo 'Build or tests failed. Notify the team...'
+            echo 'Build or tests failed. Notify the team x'
             // Insert notifications or cleanup steps here
         }
     }
